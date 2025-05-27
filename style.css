@@ -1,0 +1,79 @@
+:root {
+  --bg-color: #f6f6f6;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --card-border: rgba(0, 0, 0, 0.1);
+  --text-color: #333;
+  --secondary-text: #666;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #363636;
+    --card-bg: rgba(30, 30, 30, 0.9);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --text-color: #fff;
+    --secondary-text: #ccc;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  margin: 0;
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 400px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.card-content {
+  padding: 25px;
+}
+
+.card-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 15px 0;
+  color: var(--text-color);
+}
+
+.card-description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--secondary-text);
+  margin: 0;
+}
